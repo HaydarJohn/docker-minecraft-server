@@ -6,7 +6,7 @@ services:
       TYPE: "FABRIC"
       MODRINTH_PROJECTS: |
         fabric-api
-        simple-voice-chat
+        simple-voice-chat:beta
     ports:
       - "25565:25565"
       - "24454:24454/udp" # Make sure to change the voice chat port if you aren't using the default one
