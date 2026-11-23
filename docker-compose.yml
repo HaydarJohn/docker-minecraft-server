@@ -3,10 +3,15 @@ services:
     image: itzg/minecraft-server
     environment:
       EULA: "true"
+      TYPE: "FABRIC"
+      MODRINTH_PROJECTS: |
+        fabric-api
+        simple-voice-chat
     ports:
       - "25565:25565"
+      - "24454:24454/udp" # Make sure to change the voice chat port if you aren't using the default one
     volumes:
-      - data:/data
+      - ./minecraftData:/data:z
     stdin_open: true
     tty: true
     restart: unless-stopped
